@@ -1,8 +1,8 @@
-namespace SolutionWithCsharp;
+namespace CSharp.Easy.Array;
 
 public class ReverseLinkedList
 {
-    public ListNode ReverseList(ListNode head) 
+    public ListNode ReverseList(ListNode head)
     {
         ListNode next = null;
 
@@ -12,6 +12,6 @@ public class ReverseLinkedList
             head = head.next;
         }
 
-        return next; 
+        return next;
     }
 }
