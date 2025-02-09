@@ -4,23 +4,27 @@ public class ValidParentheses
 {
     public bool IsValid(string s) 
     {
-        var couples = new Dictionary<char, char>()
-        { 
-            {')', '('}, 
-            {']', '['},
-            {'}', '{'} 
-        };       
+        //const string openBrackets = "([{";
         var stack = new Stack<char>();
 
         foreach (char bracket in s)
         {
-            if (couples.ContainsValue(bracket)) 
-                stack.Push(bracket);
-            else if(couples.ContainsKey(bracket) 
-                    && (stack.Count == 0 || couples[bracket] != stack.Pop())) 
-                return false;
+            if(stack.Count != 0 && IsPair(stack.Peek(), bracket)) 
+            {
+                stack.Pop();
+                continue;
+            }
+
+            stack.Push(bracket);
         }
 
         return stack.Count == 0;
+    }
+
+    public bool IsPair(char open, char close) 
+    {
+        return open == '(' && close == ')' 
+        || open == '[' && close == ']'
+        || open == '{' && close == '}';
     }
 }

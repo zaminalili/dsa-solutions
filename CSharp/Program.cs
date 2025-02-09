@@ -13,3 +13,5 @@ Console.WriteLine(validParantheses.IsValid(input2));
 Console.WriteLine(validParantheses.IsValid(input3));
 Console.WriteLine(validParantheses.IsValid(input4));
 Console.WriteLine(validParantheses.IsValid(input5));
+
+// Console.WriteLine($"Is pair: {validParantheses.IsPair('(', ']')}");
