@@ -1,29 +1,15 @@
-﻿
-using CSharp;
+﻿using CSharp.Easy.Stackes;
 
-CustomQueue<int> queue= new CustomQueue<int>();
+var validParantheses = new ValidParentheses();
 
-Stack<char> stack= new Stack<char>();
+string input1 = "()";
+string input2 = "()[]{}";
+string input3 = "(]";
+string input4 = "([])";
+string input5 = "]";
 
-// stack.Push
-
-queue.Enqueue(1);
-queue.Enqueue(2);
-queue.Enqueue(3);
-queue.Enqueue(4);
-
-Console.WriteLine("");
-// Console.WriteLine($"{queue.Dequeue()}");
-// Console.WriteLine($"{queue.Dequeue()}");
-// Console.WriteLine($"{queue.Dequeue()}");
-
-// CustomStack<int> customStack= new CustomStack<int>();
-
-// customStack.Push(1);
-// customStack.Push(2);
-// customStack.Push(3);
-// customStack.Push(4);
-
-// Console.WriteLine(customStack.Pop());
-// Console.WriteLine(customStack.Pop());
-// Console.WriteLine(customStack.Pop());
+Console.WriteLine(validParantheses.IsValid(input1));
+Console.WriteLine(validParantheses.IsValid(input2));
+Console.WriteLine(validParantheses.IsValid(input3));
+Console.WriteLine(validParantheses.IsValid(input4));
+Console.WriteLine(validParantheses.IsValid(input5));
