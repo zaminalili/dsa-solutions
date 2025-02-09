@@ -1,29 +1,29 @@
-﻿Console.WriteLine("Hello, LinkedList");
+﻿
+using CSharp;
 
-ListNode node4 = new ListNode(4);
-ListNode node3 = new ListNode(3, node4);            // Düyün 3 (-> null)
-ListNode node2 = new ListNode(2, node3);     // Düyün 2 -> 3
-ListNode node1 = new ListNode(1, node2);     // Düyün 1 -> 2 -> 3
+CustomQueue<int> queue= new CustomQueue<int>();
 
-// ListNode rnode4 = new ListNode(node1.val);
-// ListNode rnode3 = new ListNode(node1.next.val, rnode4);
-// ListNode rnode2 = new ListNode();
+Stack<char> stack= new Stack<char>();
 
+// stack.Push
 
-// val = next.val
+queue.Enqueue(1);
+queue.Enqueue(2);
+queue.Enqueue(3);
+queue.Enqueue(4);
 
-ListNode current = node1;
-ListNode? next = null;
+Console.WriteLine("");
+// Console.WriteLine($"{queue.Dequeue()}");
+// Console.WriteLine($"{queue.Dequeue()}");
+// Console.WriteLine($"{queue.Dequeue()}");
 
-while (current != null)
-{
-    //Console.WriteLine($"{current.val}");
+// CustomStack<int> customStack= new CustomStack<int>();
 
-    ListNode newNode = new ListNode(current.val, next);
+// customStack.Push(1);
+// customStack.Push(2);
+// customStack.Push(3);
+// customStack.Push(4);
 
-    next = newNode;
-    current = current.next;
-}
-
-Console.WriteLine($"new {next!.next}");
-
+// Console.WriteLine(customStack.Pop());
+// Console.WriteLine(customStack.Pop());
+// Console.WriteLine(customStack.Pop());
