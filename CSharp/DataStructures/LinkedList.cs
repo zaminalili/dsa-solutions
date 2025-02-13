@@ -3,10 +3,12 @@ namespace CSharp.DataStuctures;
 public class Node<T>
 {
     public T val;
+    public Node<T> previous;
     public Node<T> next;
-    public Node(T val=default!, Node<T> next=null!) 
+    public Node(T val=default!, Node<T> next=null!, Node<T> previous = null!) 
     {
         this.val = val;
+        this.previous = previous;
         this.next = next;
     }
 }
@@ -25,7 +27,13 @@ public class MyLinkedList<T>
 
     public Node<T> AddFirst(T value) 
     {
-        Head = new Node<T>(value, Head!);
+        var newNode = new Node<T>(value, Head!);
+        
+        if(Head != null) 
+            Head.previous = newNode;
+        
+        Head = newNode;
+
         if(Tail == null)
             Tail = Head;
 
@@ -54,6 +62,7 @@ public class MyLinkedList<T>
             var tempNode = Tail;
             Tail = newNode;
             tempNode.next = Tail;
+            Tail.previous = tempNode;
         }
 
         return newNode;
@@ -61,28 +70,21 @@ public class MyLinkedList<T>
 
     public void AddLast(Node<T> node) 
     {
-        if(Head == null)
-            AddFirst(node);
-
-        else if(Tail == null)
-        {
-            Tail = node;
-            Head.next = Tail;
-        }
-        else 
-        {
-            var tempNode = Tail;
-            Tail = node;
-            tempNode.next = Tail;
-        }
-            
+        Tail = node;
     }
 
     public Node<T> AddAfter(Node<T> node, T value) 
     {
-        node.next = new Node<T>(value, node.next);
+        var newNode = new Node<T>(value, node.next, node);
+        
+        if(node.next == null)
+            Tail = newNode;
+        else
+            node.next.previous = newNode;
 
-        return node.next;
+        node.next = newNode;
+
+        return newNode;
     }
 
     public void AddAfter(Node<T> node, Node<T> newNode) 
@@ -90,25 +92,78 @@ public class MyLinkedList<T>
         node.next = newNode;
     }
 
-    // public Node<T> AddBefore(Node<T> node, T value) 
-    // {
-    //     new Node<T> (value, node);
-    // }
+    public Node<T> AddBefore(Node<T> node, T value) 
+    {
+        var newNode = new Node<T> (value, node, node.previous);
+
+        if(node.previous == null)
+            Head = newNode;
+        else
+            node.previous.next = newNode;
+    
+        node.previous = newNode;
+
+        return newNode;
+    }
+
+    public void RemoveFirst() 
+    {
+        if(Head != null) 
+        {
+            Head = Head.next;
+            Head.previous = null!;
+        }
+    }
+
+    public void RemoveLast() 
+    {
+        if(Tail != null) 
+        {
+            Tail = Tail.previous;
+            Tail.next = null!;
+        }
+    }
+
+    public bool Remove(T value) 
+    {
+        var current = Head;
+
+        while(current != null)
+        {
+            if(Head!.val!.ToString() == value!.ToString())
+            {
+                RemoveFirst();
+                return true;
+            }
+            else if(Tail!.val!.ToString() == value!.ToString()) 
+            {
+                RemoveLast();
+                return true;
+            }
+
+            else if(current.val!.ToString() == value!.ToString()) 
+            {
+                current.next.previous = current.previous;
+                current.previous.next = current.next;
+                return true;
+            }
+            current = current.next;
+        } 
+
+        return false;
+    }
+
+
 
     public void WriteAllValue() 
     {
         var current = Head;
 
-        if(current != null) 
+        while(current != null)
         {
-            while(current != null)
-            {
-                Console.Write($"{current.val} -> ");
-                current = current.next;
-            }
-        }
-            
-        
+            Console.Write($"{current.val} <-> ");
+            current = current.next;
+        } 
     }
 }
 
