@@ -3,48 +3,46 @@ using CSharp.DataStuctures;
 
 Console.WriteLine("");
 
-// Queue<int> ints= new Queue<int>();
-// ints.Dequeue();
+// Stack<int> s = new Stack<int>();
 
-MyQueue<int> queue = new(3);
+// s.Peek();
 
-// queue.Enqueue(1);
-// queue.Enqueue(2);
-// queue.Enqueue(3);
-// queue.Enqueue(4);
-// queue.Dequeue();
-// queue.Enqueue(5);
-// queue.Dequeue();
-// queue.Dequeue();
+// s.Pop();
 
-Console.WriteLine($"Count: {queue.Count()}");
 
-queue.Enqueue(1);
-queue.Enqueue(2);
-queue.Enqueue(3);
-queue.Enqueue(4);
-queue.Enqueue(5);
-queue.Enqueue(6);
-queue.Enqueue(7);
-queue.Enqueue(8);
-queue.Enqueue(9);
+MyStack<int> stack = new();
 
-Console.WriteLine($"Count: {queue.Count()}");
+stack.Write();
 
-queue.Dequeue();
-queue.Dequeue();
-queue.Dequeue();
-queue.Dequeue();
-queue.Dequeue();
-queue.Dequeue();
-queue.Dequeue();
+stack.Push(1);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
+stack.Push(2);
 
-queue.Dequeue();
- queue.Dequeue();
 
-var last = queue.Dequeue();
+stack.Pop();
+stack.Pop();
+stack.Pop();
+stack.Pop();
+stack.Pop();
+stack.Pop();
+stack.Pop();
+stack.Pop();
+stack.Pop();
 
-Console.WriteLine($"Last: {last}");
+stack.Push(8);
+stack.Push(9);
 
-queue.Write();
-// queue.Enqueue(4);
+stack.Write();
