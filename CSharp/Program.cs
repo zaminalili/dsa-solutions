@@ -1,48 +1,18 @@
 ﻿using CSharp;
 using CSharp.DataStuctures;
+using CSharp.Easy.HashMap;
 
 Console.WriteLine("");
 
-// Stack<int> s = new Stack<int>();
+MyHashMap myHashMap= new MyHashMap();
 
-// s.Peek();
+// myHashMap.Put(1, 1);
+// myHashMap.Put(11,11);
+// myHashMap.Put(111,111);
+// myHashMap.Put(1,500000);
+myHashMap.Put((int)Math.Pow(10, 6), 0);
 
-// s.Pop();
+// myHashMap.Remove(3);
+//myHashMap.Remove(111);
 
-
-MyStack<int> stack = new();
-
-stack.Write();
-
-stack.Push(1);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-stack.Push(2);
-
-
-stack.Pop();
-stack.Pop();
-stack.Pop();
-stack.Pop();
-stack.Pop();
-stack.Pop();
-stack.Pop();
-stack.Pop();
-stack.Pop();
-
-stack.Push(8);
-stack.Push(9);
-
-stack.Write();
+Console.WriteLine($"");
