@@ -1,18 +1,15 @@
 ﻿using CSharp;
 using CSharp.DataStuctures;
 using CSharp.Easy.HashMap;
+using CSharp.Easy.SlidingWindow;
 
 Console.WriteLine("");
 
-MyHashMap myHashMap= new MyHashMap();
+int[] nums = { 1, 12,-5,-6,50, 3};
+int k = 4;
 
-// myHashMap.Put(1, 1);
-// myHashMap.Put(11,11);
-// myHashMap.Put(111,111);
-// myHashMap.Put(1,500000);
-myHashMap.Put((int)Math.Pow(10, 6), 0);
+int[] nums2 = {5};
+int k2 = 1;
 
-// myHashMap.Remove(3);
-//myHashMap.Remove(111);
-
-Console.WriteLine($"");
+Console.WriteLine(MaximumAverageSubarray.FindMaxAverage(nums, k));
+Console.WriteLine(MaximumAverageSubarray.FindMaxAverage(nums2, k2));
