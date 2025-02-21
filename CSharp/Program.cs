@@ -6,6 +6,12 @@ using CSharp.Easy.SuperEasyProblems;
 
 Console.WriteLine("");
 
-int num = 38;
+string s1 = "leetcode";
+string s2 = "loveleetcode";
+string s3 = "aabb";
+string s4 = "a";
 
-AddDigitsSolution.AddDigits(num);
+Console.WriteLine(FirstUniqueCharacterInAString.FirstUniqChar(s1));
+Console.WriteLine(FirstUniqueCharacterInAString.FirstUniqChar(s2));
+Console.WriteLine(FirstUniqueCharacterInAString.FirstUniqChar(s3));
+Console.WriteLine(FirstUniqueCharacterInAString.FirstUniqChar(s4));
