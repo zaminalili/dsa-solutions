@@ -7,7 +7,12 @@ using CSharp.Sorting;
 
 Console.WriteLine("");
 
-string[] sentences1 = ["alice and bob love leetcode", "i think so too", "this is great thanks very much"];
-string[] sentences2 = ["please"];
+CountTheDigitsThatDivideANumber solution = new();
 
-Console.WriteLine(MaximumNumberOfWordsFoundInSentences.MostWordsFound(sentences2));
+int num1 = 7;
+int num2 = 121;
+int num3 = 1248;
+
+Console.WriteLine(solution.CountDigits(num1));
+Console.WriteLine(solution.CountDigits(num2));
+Console.WriteLine(solution.CountDigits(num3));
