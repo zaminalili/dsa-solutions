@@ -7,7 +7,7 @@ using CSharp.Sorting;
 
 Console.WriteLine("");
 
-string sentence1 = "thequickbrownfoxjumpsoverthelazydog";
-string sentence2 = "leetcode";
+string[] sentences1 = ["alice and bob love leetcode", "i think so too", "this is great thanks very much"];
+string[] sentences2 = ["please"];
 
-Console.WriteLine(CheckIfTheSentenceIsPangram.CheckIfPangram(sentence1));
+Console.WriteLine(MaximumNumberOfWordsFoundInSentences.MostWordsFound(sentences2));
