@@ -4,20 +4,14 @@ public static class CheckIfTheSentenceIsPangram
 {
     public static bool CheckIfPangram(string sentence) 
     {
-        //const string alphabet = "abcdefghijklmnopqrstuvwxyz";
-
-        Dictionary<char, int> alphabetCounts = new() {{'a', 0},};
-
-        for (char c = 'a'; c <= 'z'; c++)
-        {
-            alphabetCounts.Add(c, 0);
-        }
+        string foundChars = "";
 
         foreach (char c in sentence)
         {
-            alphabetCounts[c] = alphabetCounts[c] + 1;
+            if(!foundChars.Contains(c))
+                foundChars += c;
         }
 
-        return alphabetCounts.ContainsValue(0) ? false : true;
+        return foundChars.Length == 26;
     }
 }
