@@ -6,7 +6,7 @@ public static class MinimumNumberGame
 {
     public static int[] NumberGame(int[] nums) 
     {
-        nums = SelectionSort.SortAsc(nums);
+        nums = SelectionSort<int>.SortAsc(nums);
 
         int i = 0;
         int j = 1;
