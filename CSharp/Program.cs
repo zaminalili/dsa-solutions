@@ -7,13 +7,9 @@ using CSharp.Sorting;
 
 Console.WriteLine("");
 
-int n1 = 5;
-int start1 = 0;
+int n = 10;
+int m = 3;
 
-int n2 = 4;
-int start2 = 3;
+DivisibleAndNonDivisibleSumsDifference s = new();
 
-XOROperationInAnArray s = new();
-
-Console.WriteLine(s.XorOperation(n1, start1));
-Console.WriteLine(s.XorOperation(n2, start2));
+Console.WriteLine(s.DifferenceOfSums(n, m));
