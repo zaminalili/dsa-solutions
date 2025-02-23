@@ -8,23 +8,9 @@ public class DifferenceBetweenElementSumAndDigitSumOfAnArray
 
         foreach (int num in nums)
         {
-            if(num >= 10) 
-                difference += Math.Abs(num - SumDigit(num));
+            difference += Math.Abs(num - (num % 10 + (num / 10 % 10)+ (num / 100 % 10) + (num / 1000)));
         }
 
         return difference;    
-    }
-
-    private static int SumDigit(int num) 
-    {
-        int digitSum = 0;
-
-        while(num > 0) 
-        {
-            digitSum += num % 10;
-            num /= 10; 
-        }
-
-        return digitSum;
     }
 }
