@@ -7,9 +7,8 @@ using CSharp.Sorting;
 
 Console.WriteLine("");
 
-int n = 10;
-int m = 3;
+string str = "QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,./";
 
-DivisibleAndNonDivisibleSumsDifference s = new();
+ToLowerCaseSolution s = new();
 
-Console.WriteLine(s.DifferenceOfSums(n, m));
+Console.WriteLine(s.ToLowerCase(str));
