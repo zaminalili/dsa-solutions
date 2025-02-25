@@ -11,17 +11,15 @@ public class SquaresOfASortedArray
 
         while (k >= 0) 
         {
-            int powI = (int)Math.Pow(nums[i], 2);
-            int powJ = (int)Math.Pow(nums[j], 2);
 
-            if(powI > powJ) 
+            if(Math.Abs(nums[i]) > Math.Abs(nums[j])) 
             {   
-                result[k] = powI;
+                result[k] = nums[i]*nums[i];
                 i++;
             }
             else 
             {
-                result[k] = powJ;
+                result[k] = nums[j]*nums[j];
                 j--;
             }
 
