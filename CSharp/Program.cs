@@ -7,16 +7,11 @@ using CSharp.Sorting;
 
 Console.WriteLine("");
 
-int[] nums = [-4,-1,0,3,10];
+int[][] nums = [[1,2,3],[3,2,1]];
 
 
 
-SquaresOfASortedArray s = new();
+RichestCustomerWealth s = new();
 
    
-nums = s.SortedSquares(nums);
-
-foreach (var num in nums)
-{
-    Console.WriteLine(num);
-}
+Console.WriteLine(s.MaximumWealth(nums));
