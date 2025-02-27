@@ -7,11 +7,11 @@ using CSharp.Sorting;
 
 Console.WriteLine("");
 
-int[][] nums = [[1,2,3],[3,2,1]];
+int[] nums = [1,2,34,3,4,5,7,23,12];
 
 
 
-RichestCustomerWealth s = new();
+ThreeConsecutiveOddsSolution s = new();
 
    
-Console.WriteLine(s.MaximumWealth(nums));
+Console.WriteLine(s.ThreeConsecutiveOdds(nums));
