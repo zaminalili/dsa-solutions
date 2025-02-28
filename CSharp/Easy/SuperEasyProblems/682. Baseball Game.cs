@@ -4,27 +4,35 @@ public class BaseballGame
 {
     public int CalPoints(string[] operations) 
     {
-        List<int> records = [];
+        Stack<int> records = new();
+        int sum = 0;
 
         foreach (var opr in operations)
         {
             switch (opr)
             {
                 case "C":
-                    records.RemoveAt(records.Count - 1);
+                    sum -= records.Pop();
                     break;
                 case "D":
-                    records.Add(records[^1] *2);
+                    sum += records.Peek() * 2;
+                    records.Push(records.Peek() * 2);
                     break;
                 case "+":
-                    records.Add(records[^1] +records[^2]);
+                    int top = records.Pop();
+                    int newTop = top + records.Peek();
+                    
+                    sum += newTop;
+                    records.Push(top);
+                    records.Push(newTop);
                     break;
                 default:
-                    records.Add(Int32.Parse(opr));
+                    sum += Int32.Parse(opr);
+                    records.Push(Int32.Parse(opr));
                     break;
             }
         }
 
-        return records.Sum();    
+        return sum;    
     }
 }
