@@ -7,14 +7,32 @@ using CSharp.Sorting;
 
 Console.WriteLine("");
 
-int[] nums = [7,36,96,70,85,23,5,18,4,12,89,92,9,30,53,14,96,32,13,43,37,60,75,7,83,68,20,8,-24,-80,-27,-92,-96,-20,-16,-52,-49,-38];
+string[][] inputs =
+[
+    ["5", "2", "C", "D", "+"],
+    ["5", "-2", "4", "C", "D", "9", "+", "+"],
+    ["1", "C"],
+    ["10", "20", "C", "+"],
+    ["3", "6", "D", "C", "+"]
+];
 
-int[] nums2 = [-1,1,-1,1,-1];
-int[] nums3 = [9,72,34,29,-49,-22,-77,-17,-66,-75,-44,-30,-24];
+int[] outputs =
+[
+    30, // [5, 10, 15] -> 30
+    27, // [5, -2, -4, 9, 5, 14] -> 27
+    0,  // [] -> 0
+    30, // [10, 10] -> 30
+    9   // [3, 6] -> 9
+];
 
 
 
-SignOfTheProductOfAnArray s = new();
+
+BaseballGame s = new();
 
    
-Console.WriteLine(s.ArraySign(nums3));
+for (int i = 0; i < inputs.Length; i++)
+{
+    int result = s.CalPoints(inputs[i]);
+    Console.WriteLine($"Test {i + 1}: {(result == outputs[i] ? "✅ Passed" : "❌Failed")}");
+}
