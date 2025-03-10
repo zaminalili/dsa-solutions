@@ -7,32 +7,12 @@ using CSharp.Sorting;
 
 Console.WriteLine("");
 
-string[][] inputs =
-[
-    ["5", "2", "C", "D", "+"],
-    ["5", "-2", "4", "C", "D", "9", "+", "+"],
-    ["1", "C"],
-    ["10", "20", "C", "+"],
-    ["3", "6", "D", "C", "+"]
-];
+int[] nums= [5, 4, 3, 2, 1];
+int[] nums2= [85, 12, 59, 45, 72, 51];
 
-int[] outputs =
-[
-    30, // [5, 10, 15] -> 30
-    27, // [5, -2, -4, 9, 5, 14] -> 27
-    0,  // [] -> 0
-    30, // [10, 10] -> 30
-    9   // [3, 6] -> 9
-];
+nums = InsertionSort.SortAsc(nums2);
 
-
-
-
-BaseballGame s = new();
-
-   
-for (int i = 0; i < inputs.Length; i++)
+foreach (var num in nums)
 {
-    int result = s.CalPoints(inputs[i]);
-    Console.WriteLine($"Test {i + 1}: {(result == outputs[i] ? "✅ Passed" : "❌Failed")}");
+    Console.WriteLine(num);
 }
