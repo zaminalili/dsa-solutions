@@ -7,16 +7,13 @@ public static class InsertionSort
         for (int i = 1; i < arr.Length; i++)
         {
            int j = i-1;
-           int k = i;
-           while (j >= 0)
+           int k = arr[i];
+           while (j >= 0 && arr[j] > k)
            {
-                if(arr[j] > arr[k])
-                {
-                    (arr[j], arr[k]) = (arr[k], arr[j]);
-                }
+                arr[j+1] = arr[j];
                 j--;
-                k--;
-           }     
+           }
+           arr[j+1] = k;     
         }        
 
         return arr;
