@@ -10,10 +10,13 @@ public class CustomList<T> where T : IComparable
     private const int defaultCapacity = 10;
     private int length = 0;
 
-    public CustomList(int initialCapacity = defaultCapacity)
+    public CustomList() : this(defaultCapacity)
+    {}
+
+    public CustomList(int initialCapacity)
     {
         if(initialCapacity <= 0)
-            throw new InvalidOperationException("Capacity cannot be zero or less");
+            throw new ArgumentException("Capacity must be greater than zero", nameof(initialCapacity));
 
         items = new T[initialCapacity];
         capacity = initialCapacity;
@@ -40,10 +43,10 @@ public class CustomList<T> where T : IComparable
     /// </summary>
     public void Remove() 
     {   
-        length--;
-        if(length < 0)
-            throw new InvalidOperationException("Cannot remove item from empty list");
+        if(length == 0)
+            throw new InvalidOperationException("Cannot remove item from an empty list");
         
+        length--;
         items[length] = default!;
         Resize();
     }
@@ -59,7 +62,7 @@ public class CustomList<T> where T : IComparable
     public void RemoveAt(int index) 
     {
         if(index < 0 || index >= length)
-            throw new ArgumentOutOfRangeException("Given index does't match the length of the list.");
+            throw new ArgumentOutOfRangeException(nameof(index), "Index must be within range.");
 
         for (int i = index; i < length-1; i++)
             items[i] = items[i+1];
@@ -95,7 +98,7 @@ public class CustomList<T> where T : IComparable
             capacity *= 2;
             Array.Resize(ref items, capacity);
         }
-        else if(length < capacity/2) 
+        else if(length < capacity/4) 
         {
             capacity /= 2;
             Array.Resize(ref items, capacity);
