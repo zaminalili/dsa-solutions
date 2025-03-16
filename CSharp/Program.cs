@@ -1,31 +1,22 @@
-﻿using Algorithms;
+﻿using System.Diagnostics;
+using Algorithms;
 using CSharp.DataStructures;
+using CSharp.Easy.Maths;
 
-List<int> list = new(10);
+ExcelSheetColumnTitle s = new();
 
-// list.Add(1);
-// list.Add(2);
-list.Add(2);
-list.Remove(2);
+long totalElapsedMS = 0;
+int count = 1000;
 
-CustomList<int> customList = new(2);
+for (int i = 1; i <= count; i++)
+{
+    var stopwatch =  Stopwatch.StartNew();
 
-Console.WriteLine($"List length: {customList.Length}");
+    s.ConvertToTitle(i);
 
-customList.Add(1);
-customList.Add(2);
-customList.Add(3);
-customList.Add(4);
-customList.Add(5);
-customList.Add(6);
+    stopwatch.Stop();
+    totalElapsedMS += stopwatch.ElapsedMilliseconds;
+}
 
-customList.Remove();
-
-// customList.RemoveAt(3);
-// customList.Remove();
-// customList.Remove();
-
-Console.WriteLine($"List length: {customList.Length}");
-
-customList.Add(3);
+Console.WriteLine($"Mean: {totalElapsedMS/count} ms");
 
