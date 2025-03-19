@@ -5,14 +5,9 @@ public class ExcelSheetColumnNumber
     public int TitleToNumber(string columnTitle) 
     {
         int total = 0;
-        int count = columnTitle.Length - 1;
 
-        for (int i = count; i >= 0 ; i--)
-        {
-            int number = columnTitle[i]-64;
-            int pow = (int)Math.Pow(26, count - i);
-            total += number * pow;
-        }
+        foreach (char c in columnTitle)
+            total = total * 26 + (c - 'A' + 1);
 
         return total;
     }
