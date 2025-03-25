@@ -6,14 +6,9 @@ public class ConstructTheRectangle
     {
         int w = (int)Math.Sqrt(area);
 
-        while(w > 0) 
-        {
-            var l = (double)area / (double)w;
-            if(l- (double)(int)l == 0) 
-                return [(int)l, w];
+        while(area % w != 0) 
             w--;
-        }
-
-        return [w, w];
+    
+        return [area/w, w];
     }
 }
