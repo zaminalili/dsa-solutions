@@ -3,14 +3,13 @@ using Algorithms;
 using CSharp.DataStructures;
 using CSharp.Easy.Maths;
 
-ExcelSheetColumnNumber s = new();
+ConstructTheRectangle s = new();
 
-//s.TitleToNumber("W");
-Console.WriteLine(s.TitleToNumber("A"));
-Console.WriteLine(s.TitleToNumber("AB"));
-Console.WriteLine(s.TitleToNumber("ZY"));
-Console.WriteLine(s.TitleToNumber("XFD")); // 16384
-Console.WriteLine(s.TitleToNumber("Z")); // 
-Console.WriteLine(s.TitleToNumber("AZ")); // 
+var pair = s.ConstructRectangle(1);
+
+foreach (var item in pair)
+{
+    Console.Write(item + ", ");
+}
 
 
