@@ -1,9 +1,11 @@
+using System.Collections;
+
 namespace CSharp.DataStructures;
 
 /// <summary>
 /// This is dynamic array
 /// </summary>
-public class CustomList<T> where T : IComparable
+public class CustomList<T> : IEnumerable<T> where T : IComparable
 {
     private T[] items;
     private int capacity;
@@ -103,5 +105,15 @@ public class CustomList<T> where T : IComparable
             capacity /= 2;
             Array.Resize(ref items, capacity);
         }
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        return new CustomEnumerator<T>(items, length);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
