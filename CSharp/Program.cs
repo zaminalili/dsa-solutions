@@ -3,13 +3,8 @@ using Algorithms;
 using CSharp.DataStructures;
 using CSharp.Easy.Maths;
 
-ConstructTheRectangle s = new();
+SelfDividingNumbersSolution s = new();
 
-var pair = s.ConstructRectangle(1);
-
-foreach (var item in pair)
-{
-    Console.Write(item + ", ");
-}
+Console.WriteLine(s.IsSelfDividing(21));
 
 
