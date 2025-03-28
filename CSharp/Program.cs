@@ -1,20 +1,9 @@
 ﻿using System.Diagnostics;
 using Algorithms;
 using CSharp.DataStructures;
+using CSharp.Easy.BitManipulation;
 using CSharp.Easy.Maths;
 
-var list = new CustomList<string>
-{
-    "A",
-    "B",
-    "C",
-    "D"
-};
+var s = new Solution762();
 
-list.Remove("C");
-
-
-foreach (var item in list)
-{
-    Console.WriteLine(item);
-}
+Console.WriteLine(s.CountPrimeSetBits(842, 888));
