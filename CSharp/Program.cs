@@ -4,6 +4,8 @@ using CSharp.DataStructures;
 using CSharp.Easy.BitManipulation;
 using CSharp.Easy.Maths;
 
-var s = new Solution762();
+var s = new Solution1266();
 
-Console.WriteLine(s.CountPrimeSetBits(842, 888));
+int[][] points = [[1,1],[3,4],[-1,0]];
+
+s.MinTimeToVisitAllPoints(points);
