@@ -4,8 +4,8 @@ using CSharp.DataStructures;
 using CSharp.Easy.BitManipulation;
 using CSharp.Easy.Maths;
 
-var s = new Solution1266();
+var s = new Solution1295();
 
-int[][] points = [[1,1],[3,4],[-1,0]];
+int[] nums =  [12,345,2,6,7896];
 
-s.MinTimeToVisitAllPoints(points);
+Console.WriteLine(s.FindNumbers(nums));
