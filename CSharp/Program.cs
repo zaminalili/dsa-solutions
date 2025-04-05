@@ -4,8 +4,14 @@ using CSharp.DataStructures;
 using CSharp.Easy.BitManipulation;
 using CSharp.Easy.Maths;
 
-var s = new Solution1295();
+var s = new Solution1304();
 
-int[] nums =  [12,345,2,6,7896];
+var nums = s.SumZero(1000);
+int sum = 0;
+foreach (int num in nums)
+{
+    Console.WriteLine(num);
+    sum += num;
+}
 
-Console.WriteLine(s.FindNumbers(nums));
+Console.WriteLine("Sum: "+ sum);
