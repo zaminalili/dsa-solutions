@@ -45,7 +45,7 @@ void addLast(node *head, int value) {
     addNext(current, value);
 }
 
-node* removeNext(node *head, int value){
+node* removeFirstMatchingValue(node *head, int value){
     node *current = head;
     node *tempNode;
 
@@ -70,6 +70,15 @@ node* removeNext(node *head, int value){
     free(tempNode);
 
 }
+
+void removeNext(node *n) {
+    if(n->next != NULL) {
+        node *temp = n->next;
+        n->next = n->next->next;
+        free(temp);
+    }
+}
+
 
 int main() {
 
@@ -96,10 +105,12 @@ int main() {
     addNext(head, 2);
     addNext(head, 3);
     addNext(head, 4);
-    printValues(head);
+    //printValues(head);
 
     addLast(head, 10);
     printValues(head);
 
+    freeLinkedList(head);
+    //printValues(head);
     return 0;
 }
