@@ -1,12 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-struct ListNode {
-    int value;
-    struct ListNode *next;
-};
-
-typedef struct ListNode node;
+#include "linkedlist.h"
 
 node* createLinkedList(int value) {
     node *head = malloc(sizeof(node));
@@ -77,40 +71,4 @@ void removeNext(node *n) {
         n->next = n->next->next;
         free(temp);
     }
-}
-
-
-int main() {
-
-    // node *head = malloc(sizeof(node));
-    // head->value = 1;
-    // head->next = malloc(sizeof(node));
-    // head->next->value = 2;
-
-    // node *current = head;
-
-    // printf("%d \n", head->value);
-    // printf("%d \n", head->next->value);
-
-    // while (current->next != NULL)
-    // {
-    //     printf("%d \n", current->value);
-    //     current = current->next;
-    // }
-    
-
-    node *head = createLinkedList(1);
-    //printf("%d \n", head->value);
-
-    addNext(head, 2);
-    addNext(head, 3);
-    addNext(head, 4);
-    //printValues(head);
-
-    addLast(head, 10);
-    printValues(head);
-
-    freeLinkedList(head);
-    //printValues(head);
-    return 0;
 }
