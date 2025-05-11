@@ -1,17 +1,26 @@
-﻿using System.Diagnostics;
-using Algorithms;
-using CSharp.DataStructures;
-using CSharp.Easy.BitManipulation;
-using CSharp.Easy.Maths;
+﻿using CSharp.DataStructures;
+using CSharp.Easy.Recursive;
+using CSharp.Sorting;
 
-var s = new Solution1304();
+var bst = new BinarySearchTree<int>();
 
-var nums = s.SumZero(1000);
-int sum = 0;
-foreach (int num in nums)
-{
-    Console.WriteLine(num);
-    sum += num;
-}
+bst.Insert(5);
+bst.Insert(3);
+bst.Insert(7);
+bst.Insert(2);
+bst.Insert(4);
+bst.Insert(6);
+bst.Insert(8);
 
-Console.WriteLine("Sum: "+ sum);
+//bst.TraversalPreOrder();
+
+// var bstString = new BinarySearchTree<string>();
+
+// bstString.Insert("D");
+// bstString.Insert("B");
+// bstString.Insert("F");
+// bstString.Insert("A");
+
+
+// bst.TraversalInOrder();
+// bstString.TraversalInOrder();
