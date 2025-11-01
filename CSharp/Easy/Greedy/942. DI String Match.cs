@@ -15,10 +15,7 @@ public static class DIStringMatch942
                 perm[i] = max--;
         }
 
-        if(s[len-1] == 'I')
-            perm[len] = min++;
-        else
-            perm[len] = max--;
+        perm[len] = min;
 
         return perm; 
     }
